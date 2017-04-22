@@ -39,7 +39,7 @@ function loadData() {
       if( data.response && data.response.docs && data.response.docs.length ){
         $nytHeaderElem.text("New York Times articles about " + city );
         $.each(data.response.docs, function(i, article ){
-          if( article.web_url && article.lead_paragraph && article.snippet ){
+          if( article.web_url && article.lead_paragraph && article.snippet && article.type_of_material != "Paid Death Notice"){
             var li = '<li class="article">';
             li += '<a target="_blank" href="' + article.web_url + '">' + article.snippet + '</a>';
             li += '<p>' + article.lead_paragraph + '</p>';
